@@ -39,7 +39,7 @@ def predict():
                                columns=['localizacion_inicial', 'aspecto_topografico', 'numero_zonas_afectadas', 'isquemia', 'infeccion', 'edema', 'neuropatia', 'profundidad', 'area', 'fase_cicatrizacion'])
         data_df_scaled = scaled.transform(data_df)
         
-        data_for_pca = pd.DataFrame(data_df_scaled, columns=data_df.columns)[['localizacion_inicial', 'isquemia', 'infeccion', 'edema', 'neuropatia', 'profundidad']]
+        data_for_pca = pd.DataFrame(data_df_scaled, columns=data_df.columns)[['aspecto_topografico', 'isquemia', 'infeccion', 'edema', 'neuropatia']]
         data_df_pca = pca.transform(data_for_pca)
         
         # Realizar predicciones
